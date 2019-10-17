@@ -1,10 +1,14 @@
 package zhangxiaoyu.StreamUtil;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -14,6 +18,31 @@ import java.io.InputStream;
  * @date: 2019年8月8日 下午2:14:58
  */
 public class StreamUtil {
+	/**
+	 * 
+	 * @Title: readFile 
+	 * @Description:读取文件
+	 * @param in
+	 * @return
+	 * @return: List<String>
+	 */
+	public static List<String> readFile(InputStream in) {
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+
+		List<String> list = new ArrayList<>();
+		String lineText = null;
+		try {
+			while ((lineText = reader.readLine()) != null) {
+
+				list.add(lineText);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return list;
+
+	}
 
 	/*
 	* 方法1：批量关闭流，参数能传无限个。(3分)

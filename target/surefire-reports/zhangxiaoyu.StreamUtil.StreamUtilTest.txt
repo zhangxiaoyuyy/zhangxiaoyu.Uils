@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: zhangxiaoyu.StreamUtil.StreamUtilTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec <<< FAILURE!
+zhangxiaoyu.StreamUtil.StreamUtilTest.testReadTextFileFile()  Time elapsed: 0.004 sec  <<< FAILURE!
+java.io.FileNotFoundException: G:\小一\老师代码\2019-08-08\上午\视频\readme.txt (系统找不到指定的路径。)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at zhangxiaoyu.StreamUtil.StreamUtil.readTextFile(StreamUtil.java:84)
+	at zhangxiaoyu.StreamUtil.StreamUtilTest.testReadTextFileFile(StreamUtilTest.java:26)
+
+zhangxiaoyu.StreamUtil.StreamUtilTest.testReadTextFileInputStream()  Time elapsed: 0 sec  <<< FAILURE!
+java.io.FileNotFoundException: G:\小一\老师代码\2019-08-08\上午\视频\readme.txt (系统找不到指定的路径。)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at zhangxiaoyu.StreamUtil.StreamUtilTest.testReadTextFileInputStream(StreamUtilTest.java:20)
+

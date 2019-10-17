@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhangxiaoyu.cms.dao.VoteMapper">
+	<insert id="insert">
+		insert into cms_vote set
+		user_id=#{userId},article_id=#{articleId},option_id=#{optionId}
+	</insert>
+	<select id="selects" resultType="map">
+		select ROUND((count(OPTION_id)/(select count(option_id) from cms_vote v2
+		where v2.article_id =v1.article_id)*100),1) as scale ,OPTION_id from
+		cms_vote v1
+		where article_id=#{id}
+		GROUP BY OPTION_id
+	</select>
+</mapper>

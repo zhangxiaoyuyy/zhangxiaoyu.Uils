@@ -19,6 +19,26 @@ public class RandomUtil {
 		return x;
 	}
 	
+	
+	/**
+	 * 
+	 * @Title: randomLen 
+	 * @Description: 根据长度返回随机数字
+	 * @param min
+	 * @param max
+	 * @param len
+	 * @return
+	 * @return: String
+	 */
+	public static String randomLen(int min, int max,int len){
+		Random r = new Random();
+		String str = "";
+		for (int i = 0; i < len; i++) {
+			int x = r.nextInt(max-min+1)+min;
+			str+=x;
+		}
+		return str;
+	}
 	//方法2：在最小值min与最大值max之间截取subs个不重复的随机数。
 //	例如在1-10之间取3个不重复的随机数，那么[2,6,9]是对的，[3,5,5]则不对，因为5重复了。
 //	应用场景：在100篇文章中随机取10篇文章，月考可能会使用到。 (8分)

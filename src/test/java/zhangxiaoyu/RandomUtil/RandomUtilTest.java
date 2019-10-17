@@ -6,6 +6,15 @@ import org.junit.Test;
 
 public class RandomUtilTest {
 
+	
+	@Test
+	public void testRandomLen() {
+		for (int i = 0; i < 5; i++) {
+			String len = RandomUtil.randomLen(0, 9, 13);
+			System.out.println(len);
+		}
+		
+	}
 	@Test
 	public void testRandom() {
 		for (int i = 0; i <10; i++) {

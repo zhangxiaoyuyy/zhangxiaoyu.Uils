@@ -9,7 +9,39 @@ import java.util.Date;
 import org.junit.Test;
 
 public class DateUtilsTest {
+	@Test
+	public void getDaysByDepartedTest () {
+		Calendar c = Calendar.getInstance();
+		c.set(2019, 7, 15);
+		int i = DateUtils.getDaysByDeparted(c.getTime());
+		System.out.println(i);
+	}
+	@Test
+	public void getDaysByFutureTest () {
+		Calendar c = Calendar.getInstance();
+		c.set(2019, 7, 18);
+		int i = DateUtils.getDaysByFuture(c.getTime());
+		System.out.println(i);
+	}
+	@Test
+	public void getAgeTest () {
+		Calendar c = Calendar.getInstance();
+		c.set(2018, 7, 15);
+		int i = DateUtils.getAge(c.getTime());
+		System.out.println(i);
+	}
+	@Test
+	public void getRandomDateTest () {
+		Calendar c = Calendar.getInstance();
+		c.set(2018, 7, 15);
+		for (int i = 0; i <5; i++) {
+			Date date = DateUtils.getRandom(c.getTime(), new Date());
+			System.out.println(date);
+			
+		}
+	}
 
+	
 	@Test
 	public void test() {
 		Date date = DateUtils.getDateByInitMonth(new Date());
